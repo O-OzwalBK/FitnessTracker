@@ -1,0 +1,141 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to top left, #4a148c, #c51162);
+  background-repeat: cover;
+  color: white;
+}
+.formcontainer {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 20vw;
+}
+.formcontainer.heading {
+  display: flexbox;
+  align-content: flex-end;
+}
+input {
+  margin-bottom: 5vh;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  caret-color: white;
+}
+input[type="text"]::placeholder {
+  width: 100%;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+input[type="text"]:focus {
+  border: #0bdae9;
+}
+.bottom-btns {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition-duration: 0.4s;
+}
+.bottom-btns button {
+  border: 1px solid;
+  border-radius: 4px;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.bottom-btns button:hover {
+  border-color: #4a148c;
+  background-color: rgb(138, 0, 243);
+  color: white;
+}
+.bottom-btns button.active {
+  background-color: #04aa6d;
+  color: white;
+}
+/* The container must be positioned relative: */
+.formcontainer.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.formcontainer.custom-select select {
+  display: none;
+  /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* working on days selection */
+
+.days {
+  display: flex;
+  flex-direction: column;
+}
+
+.days > div {
+  margin: 5px;
+  /* border: 3px solid red; */
+  height: 20px;
+}
