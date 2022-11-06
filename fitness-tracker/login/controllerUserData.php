@@ -66,7 +66,7 @@ if (isset($_POST['check'])) {
         if ($update_res) {
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
-            header('location:home.php');
+            header('location: https://localhost/fitness-tracker/login/login-user.php');
             exit();
         } else {
             $errors['otp-error'] = "Failed while updating code!";

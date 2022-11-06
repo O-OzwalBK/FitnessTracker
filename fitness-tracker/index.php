@@ -38,7 +38,7 @@ session_start();
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand">
             <img src="images/logo1.png" alt="" />
             <span> Fitness Tracker </span>
           </a>
@@ -69,10 +69,10 @@ session_start();
               <div class="d-flex flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="about.html">About </a>
+                    <a class="nav-link" href="about.php">About </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="php/application.php">Add Routine </a>
@@ -81,6 +81,13 @@ session_start();
                   <li class="nav-item">
                     <a class="nav-link" href="php/my-routine.php">My Routine </a>
                   </li>
+                  <?php
+                  if (isset($_SESSION['email'])) {
+                  ?>
+                    <li class="nav-item">
+                      <a class="nav-link" href="php/show_progress.php">My Progress </a>
+                    </li>
+                  <?php } ?>
                   <?php
                   if (!isset($_SESSION['email'])) {
 
@@ -99,9 +106,9 @@ session_start();
                     </li>
                   <?php } ?>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <!-- <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                   <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                </form>
+                </form> -->
               </div>
             </div>
           </nav>
@@ -118,9 +125,9 @@ session_start();
                     <h2>with</h2>
                     <h1>Fitness Tracker</h1>
                     <p>Built to help you track your gains</p>
-                    <div class="btn-box">
+                    <!-- <div class="btn-box">
                       <a href="" class="btn-1"> Read More </a>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -148,7 +155,7 @@ session_start();
           <p>
             This is our first minor project built for demonstration of our academic achievement.
           </p>
-          <a href=""> Read More </a>
+          <!-- <a href=""> Read More </a> -->
         </div>
       </div>
     </div>
@@ -166,10 +173,7 @@ session_start();
         <div class="box">
           <div class="detail-box">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              culpa aut hic expedita reiciendis, at consequatur libero magnam
-              sint, quos, aperiam itaque! Reprehenderit ea velit non explicabo
-              sequi, enim numquam?
+
             </p>
           </div>
         </div>
@@ -210,14 +214,12 @@ session_start();
           <div class="carousel-item">
             <div class="box">
               <div class="img-box">
-                <img src="images/client.png" alt="" />
+                <img src="images/rambo.png" alt="" />
               </div>
               <div class="detail-box">
-                <h5>Consectetur</h5>
+                <h5>Rambo</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud
+                  If you make exercise your hobby instead of your enemy it becomes your friend; it's the one thing that will never let you down. It will always be there for you and it will always make you better than you were before. Remember: every time you go to the gym, every time you put the right supplement in your mouth, you're better than you were ten minutes ago.
                 </p>
               </div>
             </div>
@@ -228,11 +230,9 @@ session_start();
                 <img src="images/client.png" alt="" />
               </div>
               <div class="detail-box">
-                <h5>Consectetur</h5>
+                <h5>Lightweight</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud
+                  Yeah baby!!
                 </p>
               </div>
             </div>
@@ -272,7 +272,7 @@ session_start();
   <!-- end result section -->
 
   <!-- contact section -->
-  <section class="contact_section layout_padding">
+  <!-- <section class="contact_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -304,7 +304,7 @@ session_start();
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end contact section -->
 
   <!-- info section -->
@@ -322,10 +322,10 @@ session_start();
           <h6>Menus</h6>
           <ul>
             <li class="active">
-              <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="">
-              <a class="" href="about.html">About </a>
+              <a class="" href="about.php">About </a>
             </li>
             <li class="">
               <a class="" href="./login/login-user.php">Login</a>
@@ -354,9 +354,9 @@ session_start();
               <span> oozwal299@gmail.com</span>
             </a>
           </div>
-          <div class="info_social">
+          <!-- <div class="info_social">
             <div>
-              <a href="">
+              <a href="https://www.facebook.com/sumit.karmacharya.35">
                 <img src="images/facebook-logo-button.png" alt="" />
               </a>
             </div>
@@ -375,7 +375,7 @@ session_start();
                 <img src="images/instagram.png" alt="" />
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -384,9 +384,9 @@ session_start();
   <!-- end info section -->
 
   <!-- footer section -->
-  <section class="container-fluid footer_section">
+  <!-- <section class="container-fluid footer_section">
     <p>&copy; 2022 All Rights Reserved. Design by Free Html Templates</p>
-  </section>
+  </section> -->
   <!-- footer section -->
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>

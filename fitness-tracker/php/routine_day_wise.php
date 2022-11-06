@@ -22,7 +22,6 @@ $sn = 1;
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,13 +34,13 @@ $sn = 1;
     <style>
         table {
             width: 50%;
-            border: 3px solid red;
-            background-color: green;
+            border: 1px solid;
+            background-color: grey;
         }
 
         th,
         td {
-            border: 3px solid red;
+            border: 1px solid;
             padding: 10px;
         }
 
@@ -76,6 +75,7 @@ $sn = 1;
         <button onclick="my_exercise('thursday')">Thursday</button>
         <button onclick="my_exercise('friday')">Friday</button>
         <button onclick="my_exercise('saturday')">Saturday</button>
+        <button class="show-all" onclick="show_all()">Show all</button>
     </div>
 
 
@@ -105,6 +105,10 @@ $sn = 1;
     <script>
         function my_exercise(day) {
             location.href = `https://localhost/fitness-tracker/php/routine_day_wise.php?day=${day}`;
+        }
+
+        function show_all() {
+            location.href = `https://localhost/fitness-tracker/php/my-routine.php`;
         }
     </script>
 

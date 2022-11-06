@@ -35,7 +35,7 @@ if (!isset($_SESSION['email'])) {
             <label for="workout-type">Type of workout</label>
             <br />
             <div class="custom-select" style="width: 200px">
-                <select name="workout-type" id="workout-type">
+                <select name="workout-type" id="workout-type" required>
                     <option value="" disabled selected>--Select workout type--</option>
                     <option value="calisthenics">Calisthenics</option>
                     <option value="weight-lifting">Weight lifting</option>
@@ -47,15 +47,6 @@ if (!isset($_SESSION['email'])) {
             <div class="activedays">
                 <label for="selectdays">Select active days</label>
                 <br>
-                <!-- <select name="selectdays" id="selectdays">
-                    <option value="">Sunday</option>
-                    <option value="">Monday</option>
-                    <option value="">Tuesday</option>
-                    <option value="">Wednesday</option>
-                    <option value="">Thursday</option>
-                    <option value="">Friday</option>
-                    <option value="">Saturday</option>
-                </select> -->
                 <div class="days">
                     <div> <input type="checkbox" name="selectdays[]" value="sunday">
                         <label for="">Sunday</label>
@@ -101,13 +92,19 @@ if (!isset($_SESSION['email'])) {
 
         </form>
 
-        <div class="bottom-btns">
+        <!-- <div class="bottom-btns">
             <button href="" class="profile-btn">Profile</button>
             <button href="" class="add-btn">Add</button>
-            <button href="" class="summary-btn">Summary</button>
-        </div>
+            <button href="php\my-routine.php" class="summary-btn">Summary</button>
+        </div> -->
 
     </div>
+
+    <script>
+        function goto_myroutine() {
+            location.href = `https://localhost/fitness-tracker/php/my-routine.php`;
+        }
+    </script>
 </body>
 
 </html>

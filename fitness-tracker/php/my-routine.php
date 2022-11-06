@@ -9,21 +9,15 @@ if (!isset($_SESSION['email'])) {
 $login_email = $_SESSION['email'];
 // print($login_email);
 
-
 $sql = "select * from routine where email = '$login_email'";
 $result = mysqli_query($conn, $sql) or die("Query Failed");
 
 // $sql_days = "select * from days where email = '$login_email'";
 // $result = mysqli_query($conn, $sql_days);
 
-
-
-
-
 $sn = 1;
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,13 +31,13 @@ $sn = 1;
     <style>
         table {
             width: 50%;
-            border: 3px solid red;
-            background-color: green;
+            border: 1px solid;
+            background-color: grey;
         }
 
         th,
         td {
-            border: 3px solid red;
+            border: 1px solid;
             padding: 10px;
         }
 
@@ -69,9 +63,10 @@ $sn = 1;
 </head>
 
 <body>
-
-
-
+    <div class="addworkout">
+        <button onclick="return_to_routine()">Routine</button>
+        <button onclick="return_to_progress()">Progress</button>
+    </div>
     <div class="buttons">
         <button onclick="my_exercise('sunday')">Sunday </button>
         <button onclick="my_exercise('monday')">Monday</button>
@@ -81,7 +76,6 @@ $sn = 1;
         <button onclick="my_exercise('friday')">Friday</button>
         <button onclick="my_exercise('saturday')">Saturday</button>
     </div>
-
 
     <div class="container">
         <table>
@@ -94,7 +88,6 @@ $sn = 1;
             <?php
 
             while ($rows = mysqli_fetch_assoc($result)) {
-
 
             ?>
                 <tr>
@@ -118,18 +111,20 @@ $sn = 1;
 
         function complete(id) {
             location.href = `https://localhost/fitness-tracker/php/complete.php?id=${id}`;
-
-
-
         }
 
         function not_complete(id) {
             location.href = `https://localhost/fitness-tracker/php/not-complete.php?id=${id}`;
+        }
 
+        function return_to_routine() {
+            location.href = `https://localhost/fitness-tracker/php/application.php`;
+        }
+
+        function return_to_progress() {
+            location.href = `https://localhost/fitness-tracker/php/show_progress.php`;
         }
     </script>
-
-
 </body>
 
 </html>

@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 html,
 body {
-  background: #f8bc1a;
+  background: #5c15e1;
   font-family: "Poppins", sans-serif;
 }
 ::selection {
   color: #fff;
   /* background: #6665ee; */
-  background: #f8bc1a;
+  background: #ffd01a;
 }
 .container {
   position: absolute;
@@ -33,7 +33,7 @@ body {
 }
 .container .form form .button {
   /* background: #6665ee; */
-  background: #f8bc1a;
+  background: #ffd01a;
   color: #fff;
   font-size: 17px;
   font-weight: 500;
@@ -48,7 +48,7 @@ body {
 }
 .container .form form .link a {
   /* color: #6665ee; */
-  color: #f8bc1a;
+  color: #ffd01a;
 }
 .container .login-form form p {
   font-size: 14px;
