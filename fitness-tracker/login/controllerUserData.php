@@ -26,14 +26,14 @@ if (isset($_POST['signup'])) {
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $status = "notverified";
-        $insert_data = "INSERT INTO users (username, email, password, code, status)
+        $insert_data = "INSERT INTO users (username, email, password,code, status)
                         values('$username', '$email', '$encpass', '$code', '$status')";
         $data_check = mysqli_query($conn, $insert_data);
         if ($data_check) {
             $subject = "Email Verification Code";
             $message = "Your verification code is $code";
             $sender = "From: oozwal299@gmail.com";
-            // ini_set($email, $message);
+
             if (mail($email, $subject, $message, $sender)) {
                 $info = "We've sent a verification code to your email - $email";
                 $_SESSION['info'] = $info;
@@ -93,7 +93,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['password'] = $password;
                 header('location: https://localhost/fitness-tracker');
             } else {
-                $info = "It's look like you haven't still verify your email - $email";
+                $info = "It looks like you still haven't verified your email - $email";
                 $_SESSION['info'] = $info;
                 header('location: user-otp.php');
             }
@@ -101,7 +101,7 @@ if (isset($_POST['login'])) {
             $errors['email'] = "Incorrect email or password!";
         }
     } else {
-        $errors['email'] = "It's look like you're not yet a member! Click on the bottom link to signup.";
+        $errors['email'] = "It looks like you're not a member yet! Please signup.";
     }
 }
 

@@ -75,11 +75,11 @@ session_start();
                     <a class="nav-link" href="about.php">About </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="php/application.php">Add Routine </a>
+                    <a class="nav-link" href="./record_exercise/log_exercise.php">Record</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="php/my-routine.php">My Routine </a>
+                    <a class="nav-link" href="./workout_plan/overview.php">My Routine </a>
                   </li>
                   <?php
                   if (isset($_SESSION['email'])) {
@@ -106,9 +106,6 @@ session_start();
                     </li>
                   <?php } ?>
                 </ul>
-                <!-- <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                </form> -->
               </div>
             </div>
           </nav>
@@ -125,9 +122,9 @@ session_start();
                     <h2>with</h2>
                     <h1>Fitness Tracker</h1>
                     <p>Built to help you track your gains</p>
-                    <!-- <div class="btn-box">
+                    <div class="btn-box">
                       <a href="" class="btn-1"> Read More </a>
-                    </div> -->
+                    </div>
                   </div>
                 </div>
               </div>

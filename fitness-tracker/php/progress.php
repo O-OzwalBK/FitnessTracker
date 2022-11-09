@@ -8,16 +8,14 @@ if (!isset($_SESSION['email'])) {
     $login_email = $_SESSION['email'];
 }
 
-if (isset($email)) {
-    print("Connected.");
-}
-
 // $day = $_GET['day'];
 // email = '$login_email';
-$retrieve_data = "select id from routine where days like '%monday%' ";
 
-$result = mysqli_query($conn, $retrieve_data) or die("Query failed!");
+// <?php while ($rows = mysqli_fetch_assoc($result)) {
 
+// $result = mysqli_query($conn, $retrieve_data) or die("Query failed!");
+$sql = "INSERT INTO `workout` (`workout_id`, `workout_name`) VALUES (NULL, 'calisthenics',);";
+mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +31,7 @@ $result = mysqli_query($conn, $retrieve_data) or die("Query failed!");
 <body>
 
     <div>
-        <?php while ($rows = mysqli_fetch_assoc($result)) { ?>
-            <tr>
-                <td>
-                    <?php print("hi"); ?>
-                </td>
-            </tr>
-        <?php } ?>
+
     </div>
 </body>
 
